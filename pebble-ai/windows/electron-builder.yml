@@ -1,0 +1,32 @@
+appId: com.pebbleai.desktop
+productName: Pebble AI
+copyright: Copyright © 2026 Pebble AI
+directories:
+  output: release
+  buildResources: windows/resources
+files:
+  - dist/**/*
+  - server.ts
+  - server/**/*
+  - src/core/**/*
+  - windows/electron-main.cjs
+  - windows/workers/**/*
+  - windows/setup-victus-rx6500m.ps1
+  - docs/**/*
+  - package.json
+extraMetadata:
+  main: windows/electron-main.cjs
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: Pebble-AI-Setup-${version}.exe
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Pebble AI
+  include: windows/installer.nsh

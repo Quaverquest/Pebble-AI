@@ -1,0 +1,1725 @@
+{
+  "settings": {
+    "setupCompleted": true,
+    "developerMode": false,
+    "theme": "dark",
+    "themePreset": "misty_evergreen",
+    "backgroundAnimation": "aurora",
+    "customBackgroundUrl": "",
+    "aiCustomTheme": null,
+    "activeRouterId": "omni",
+    "omniMode": "automatic",
+    "allowUncensoredModels": true,
+    "preferredQuantization": "auto",
+    "smartResourceMode": true,
+    "idleUnloadSeconds": 300,
+    "maxVramBudgetGb": 3.6,
+    "maxRamBudgetGb": 32,
+    "qwenLowVramEnabled": true,
+    "remoteEnabled": true,
+    "remotePort": 3000,
+    "remotePin": "482910",
+    "remoteLocalNetworkOnly": true,
+    "localWorkers": {
+      "ollamaUrl": "http://127.0.0.1:11434",
+      "qwenImageUrl": "http://127.0.0.1:7861",
+      "voiceWorkerUrl": "http://127.0.0.1:7862",
+      "pcControlWorkerUrl": "http://127.0.0.1:7863",
+      "preferLocalWorkers": true
+    },
+    "voice": {
+      "selectedVoice": "Kore",
+      "speakingSpeed": 1,
+      "language": "en-US",
+      "vadEnabled": false,
+      "pushToTalk": true,
+      "continuousHandsFree": true
+    },
+    "modelStorageDir": "/app/applet/data/models"
+  },
+  "hardware": {
+    "detectedAt": "2026-11-19T00:46:03.196Z",
+    "hostname": "localhost",
+    "platform": "linux",
+    "arch": "x64",
+    "osRelease": "4.19.0-gvisor",
+    "cpuModel": "x64 Host Processor (4 threads)",
+    "cpuCores": 2,
+    "cpuThreads": 4,
+    "totalRamGb": 12,
+    "freeRamGb": 10.82,
+    "usedRamGb": 1.18,
+    "ramUsagePercent": 10,
+    "cpuLoadPercent": 80,
+    "diskTotalGb": 377.3,
+    "diskFreeGb": 377.1,
+    "gpuName": "No Dedicated GPU Attached (CPU / Gateway Runtime)",
+    "gpuVendor": "Host CPU",
+    "gpuVramGb": 0,
+    "gpuVramUsedGb": 0,
+    "gpuDriverBackend": "CPU AVX2 / Server Gateway (Target: AMD RX 6500M 4GB Vulkan + DirectML)",
+    "isGpuAccelerated": false,
+    "amdAcceleration": {
+      "vulkanAvailable": false,
+      "directmlAvailable": false,
+      "rocmAvailable": false,
+      "preferredBackend": "CPU (AVX2 / System RAM)",
+      "notes": [
+        "Host environment has no attached AMD RDNA 2 GPU; CPU AVX2 + @google/genai gateway fallback active.",
+        "When deployed on HP Victus 15 (Windows 11 + RX 6500M), Vulkan Compute handles GGUF/AWQ LLM layer splits and DirectML handles diffusion."
+      ]
+    },
+    "networkInterfaces": [
+      {
+        "name": "eth1",
+        "address": "169.254.8.1",
+        "port": 3000,
+        "url": "http://169.254.8.1:3000",
+        "remoteClientUrl": "http://169.254.8.1:3000/remote"
+      },
+      {
+        "name": "eth2",
+        "address": "169.254.9.1",
+        "port": 3000,
+        "url": "http://169.254.9.1:3000",
+        "remoteClientUrl": "http://169.254.9.1:3000/remote"
+      },
+      {
+        "name": "eth2",
+        "address": "169.254.169.1",
+        "port": 3000,
+        "url": "http://169.254.169.1:3000",
+        "remoteClientUrl": "http://169.254.169.1:3000/remote"
+      }
+    ],
+    "activeWorkers": {
+      "ollama": false,
+      "qwenImage": false,
+      "voice": false,
+      "cloudGateway": true
+    },
+    "targetProfile": {
+      "deviceName": "HP Victus 15",
+      "cpu": "AMD Ryzen 5 7535HS",
+      "gpu": "AMD Radeon RX 6500M",
+      "vramGb": 4,
+      "ramGb": 40,
+      "storage": "1TB Samsung NVMe SSD",
+      "os": "Windows 11 (RDNA 2 Vulkan + DirectML)"
+    }
+  },
+  "models": [
+    {
+      "id": "pebble-chat-tiny",
+      "name": "Pebble AI Chat Tiny",
+      "repoId": "pebble-ai/Pebble-Chat-Tiny-1.5B-Q4_K_M",
+      "baseModelRepo": "Qwen/Qwen2.5-1.5B-Instruct",
+      "family": "Pebble Chat (Tiny)",
+      "description": "Edited lightweight conversational & voice-fast derivative of Qwen2.5-1.5B. Runs 100% inside 4GB VRAM via Vulkan Compute with zero RAM spill.",
+      "parametersBillion": 1.5,
+      "quantization": "Q4_K_M",
+      "diskSizeGb": 1.05,
+      "supportedTasks": [
+        "general_chat",
+        "omni_routing"
+      ],
+      "assignedProfiles": [
+        "omni_routing"
+      ],
+      "isPebbleModel": true,
+      "tier": "tiny",
+      "censorship": "censored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "high",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 1.05,
+        "estimatedRamGb": 1.91,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 28,
+        "systemFitScore": 100,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "isSystemBestMatch": true,
+        "bestMatchLabel": "Best Chat Match (12GB RAM CPU Host)"
+      }
+    },
+    {
+      "id": "pebble-chat-tiny-uncensored",
+      "name": "Pebble AI Chat Tiny (Uncensored)",
+      "repoId": "pebble-ai/Pebble-Chat-Tiny-1.5B-Uncensored-AWQ",
+      "baseModelRepo": "Qwen/Qwen2.5-1.5B-Instruct",
+      "family": "Pebble Chat (Tiny)",
+      "description": "Abliterated / refusal-free Pebble Chat Tiny edited from Qwen2.5-1.5B using AWQ 4-bit weights for ultra-fast private brainstorming.",
+      "parametersBillion": 1.5,
+      "quantization": "AWQ",
+      "diskSizeGb": 1.02,
+      "supportedTasks": [
+        "general_chat"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "tiny",
+      "censorship": "uncensored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "normal",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 1.02,
+        "estimatedRamGb": 1.88,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 28,
+        "systemFitScore": 100,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "pebble-chat-small",
+      "name": "Pebble AI Chat Small",
+      "repoId": "pebble-ai/Pebble-Chat-Small-3B-AWQ",
+      "baseModelRepo": "Qwen/Qwen2.5-3B-Instruct",
+      "family": "Pebble Chat (Small)",
+      "description": "Edited compact daily assistant based on Qwen2.5-3B-Instruct with AWQ 4-bit quantization. Fits completely in RX 6500M 4GB VRAM with crisp responsiveness.",
+      "parametersBillion": 3.2,
+      "quantization": "AWQ",
+      "diskSizeGb": 2.1,
+      "supportedTasks": [
+        "general_chat",
+        "coding",
+        "vision"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "small",
+      "censorship": "censored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "high",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 2.1,
+        "estimatedRamGb": 3.2,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 36,
+        "systemFitScore": 100,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "pebble-chat-small-uncensored",
+      "name": "Pebble AI Chat Small (Uncensored)",
+      "repoId": "pebble-ai/Pebble-Chat-Small-3B-Uncensored-GPTQ",
+      "baseModelRepo": "Qwen/Qwen2.5-3B-Instruct",
+      "family": "Pebble Chat (Small)",
+      "description": "Unfiltered Pebble Chat Small edition derived from Qwen2.5-3B using GPTQ 4-bit quantization for creative writing and unrestricted local workflows.",
+      "parametersBillion": 3.2,
+      "quantization": "GPTQ",
+      "diskSizeGb": 2.15,
+      "supportedTasks": [
+        "general_chat",
+        "coding"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "small",
+      "censorship": "uncensored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "normal",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 2.15,
+        "estimatedRamGb": 3.25,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 36,
+        "systemFitScore": 100,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "pebble-chat-normal",
+      "name": "Pebble AI Chat Normal",
+      "repoId": "pebble-ai/Pebble-Chat-Normal-7B-Q4_K_M",
+      "baseModelRepo": "Qwen/Qwen2.5-7B-Instruct",
+      "family": "Pebble Chat (Normal)",
+      "description": "Flagship everyday Pebble Chat model edited from Qwen2.5-7B-Instruct. Uses Vulkan Compute GPU layers + 40GB DDR5 RAM offload for deep accuracy.",
+      "parametersBillion": 7.6,
+      "quantization": "Q4_K_M",
+      "diskSizeGb": 4.68,
+      "supportedTasks": [
+        "general_chat",
+        "coding",
+        "reasoning",
+        "omni_routing"
+      ],
+      "assignedProfiles": [
+        "general_chat"
+      ],
+      "isPebbleModel": true,
+      "tier": "normal",
+      "censorship": "censored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "high",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "loaded_cpu",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 6.39,
+      "gpuLayersLoaded": 0,
+      "loadCount": 5,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 4.68,
+        "estimatedRamGb": 6.39,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 32,
+        "systemFitScore": 100,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "isSystemBestMatch": false
+      },
+      "lastUsedAt": 1795049118283
+    },
+    {
+      "id": "pebble-chat-normal-uncensored",
+      "name": "Pebble AI Chat Normal (Uncensored)",
+      "repoId": "pebble-ai/Pebble-Chat-Normal-8B-Uncensored-BNB_NF4",
+      "baseModelRepo": "mlabonne/Meta-Llama-3.1-8B-Instruct-abliterated",
+      "family": "Pebble Chat (Normal)",
+      "description": "Uncensored 8B general reasoning model edited from Llama-3.1-8B-Abliterated with bitsandbytes NF4 dynamic quantization.",
+      "parametersBillion": 8,
+      "quantization": "BNB_NF4",
+      "diskSizeGb": 4.95,
+      "supportedTasks": [
+        "general_chat",
+        "reasoning",
+        "coding"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "normal",
+      "censorship": "uncensored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "normal",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 4.95,
+        "estimatedRamGb": 6.72,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 32,
+        "systemFitScore": 85,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "pebble-chat-ultra",
+      "name": "Pebble AI Chat Ultra",
+      "repoId": "pebble-ai/Pebble-Chat-Ultra-14B-Q4_K_M",
+      "baseModelRepo": "Qwen/Qwen2.5-14B-Instruct",
+      "family": "Pebble Chat (Ultra)",
+      "description": "High-capacity 14B synthesis & architecture model edited from Qwen2.5-14B-Instruct. Splits hot layers to 4GB VRAM and spills remaining layers to 40GB system RAM.",
+      "parametersBillion": 14.7,
+      "quantization": "Q4_K_M",
+      "diskSizeGb": 8.95,
+      "supportedTasks": [
+        "reasoning",
+        "coding",
+        "general_chat"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "ultra",
+      "censorship": "censored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "normal",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Unsupported",
+        "estimatedDiskGb": 8.95,
+        "estimatedRamGb": 11.66,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 48,
+        "systemFitScore": 5,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Insufficient system RAM: requires ~11.66GB, host reports 12.0GB."
+        ],
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "pebble-chat-ultra-uncensored",
+      "name": "Pebble AI Chat Ultra (Uncensored)",
+      "repoId": "pebble-ai/Pebble-Chat-Ultra-14B-Uncensored-GPTQ",
+      "baseModelRepo": "Qwen/Qwen2.5-14B-Instruct",
+      "family": "Pebble Chat (Ultra)",
+      "description": "Unfiltered 14B heavy reasoning model edited from Qwen2.5-14B with GPTQ 4-bit layer splitting across Vulkan VRAM + 40GB DDR5 RAM.",
+      "parametersBillion": 14.7,
+      "quantization": "GPTQ",
+      "diskSizeGb": 8.8,
+      "supportedTasks": [
+        "reasoning",
+        "coding",
+        "general_chat"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "ultra",
+      "censorship": "uncensored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "low",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Unsupported",
+        "estimatedDiskGb": 8.8,
+        "estimatedRamGb": 11.51,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 48,
+        "systemFitScore": 5,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Insufficient system RAM: requires ~11.51GB, host reports 12.0GB."
+        ],
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "pebble-image-tiny",
+      "name": "Pebble AI Image Tiny",
+      "repoId": "pebble-ai/Pebble-Image-Tiny-1B-BNB_NF4",
+      "baseModelRepo": "IDKiro/sdxs-512-0.9",
+      "family": "Pebble Image (Tiny)",
+      "description": "Sub-10s single-step & few-step draft image model edited from SDXS-512 with NF4 quantization. Runs easily inside 4GB VRAM.",
+      "parametersBillion": 0.9,
+      "quantization": "BNB_NF4",
+      "diskSizeGb": 1.4,
+      "supportedTasks": [
+        "image_generation",
+        "image_editing"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "tiny",
+      "censorship": "censored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "normal",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 1.4,
+        "estimatedRamGb": 1.8,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 24,
+        "systemFitScore": 100,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "qwenLowVramProfile": {
+          "sequentialCpuOffload": true,
+          "vaeTiling": true,
+          "attentionSlicing": true,
+          "precision": "bnb-nf4",
+          "maxRecommendedResolution": "768x768 (1024px tiled)",
+          "maxBatchSize": 1
+        },
+        "isSystemBestMatch": true,
+        "bestMatchLabel": "Best Image Match (12GB RAM CPU Host)"
+      }
+    },
+    {
+      "id": "pebble-image-tiny-uncensored",
+      "name": "Pebble AI Image Tiny (Uncensored)",
+      "repoId": "pebble-ai/Pebble-Image-Tiny-1B-Uncensored",
+      "baseModelRepo": "IDKiro/sdxs-512-0.9",
+      "family": "Pebble Image (Tiny)",
+      "description": "Unfiltered fast draft image generator edited from SDXS-512 without safety-checker blocking for rapid artistic concepting.",
+      "parametersBillion": 0.9,
+      "quantization": "BNB_NF4",
+      "diskSizeGb": 1.4,
+      "supportedTasks": [
+        "image_generation",
+        "image_editing"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "tiny",
+      "censorship": "uncensored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "low",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 1.4,
+        "estimatedRamGb": 1.8,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 24,
+        "systemFitScore": 100,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "qwenLowVramProfile": {
+          "sequentialCpuOffload": true,
+          "vaeTiling": true,
+          "attentionSlicing": true,
+          "precision": "bnb-nf4",
+          "maxRecommendedResolution": "768x768 (1024px tiled)",
+          "maxBatchSize": 1
+        },
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "pebble-image-small",
+      "name": "Pebble AI Image Small",
+      "repoId": "pebble-ai/Pebble-Image-Small-2.6B-INT8",
+      "baseModelRepo": "stabilityai/sdxl-turbo",
+      "family": "Pebble Image (Small)",
+      "description": "Balanced 2.6B photoreal & edit model edited from SDXL-Turbo with DirectML + INT8 offloading and tiled VAE for 768px outputs.",
+      "parametersBillion": 2.6,
+      "quantization": "INT8_OFFLOAD",
+      "diskSizeGb": 3.1,
+      "supportedTasks": [
+        "image_generation",
+        "image_editing"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "small",
+      "censorship": "censored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "high",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 3.1,
+        "estimatedRamGb": 4.85,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 32,
+        "systemFitScore": 100,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "qwenLowVramProfile": {
+          "sequentialCpuOffload": true,
+          "vaeTiling": true,
+          "attentionSlicing": true,
+          "precision": "int8-offload",
+          "maxRecommendedResolution": "768x768 (1024px tiled)",
+          "maxBatchSize": 1
+        },
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "pebble-image-small-uncensored",
+      "name": "Pebble AI Image Small (Uncensored)",
+      "repoId": "pebble-ai/Pebble-Image-Small-2.6B-Uncensored-INT8",
+      "baseModelRepo": "stabilityai/sdxl-turbo",
+      "family": "Pebble Image (Small)",
+      "description": "Uncensored 2.6B creative diffusion variant tuned for unrestricted local editing, style transfer, and mask inpainting.",
+      "parametersBillion": 2.6,
+      "quantization": "INT8_OFFLOAD",
+      "diskSizeGb": 3.1,
+      "supportedTasks": [
+        "image_generation",
+        "image_editing"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "small",
+      "censorship": "uncensored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "normal",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 3.1,
+        "estimatedRamGb": 4.85,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 32,
+        "systemFitScore": 100,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "qwenLowVramProfile": {
+          "sequentialCpuOffload": true,
+          "vaeTiling": true,
+          "attentionSlicing": true,
+          "precision": "int8-offload",
+          "maxRecommendedResolution": "768x768 (1024px tiled)",
+          "maxBatchSize": 1
+        },
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "pebble-image-normal",
+      "name": "Pebble AI Image Normal",
+      "repoId": "pebble-ai/Pebble-Image-Normal-7B-INT8",
+      "baseModelRepo": "Qwen/Qwen-Image-2.1",
+      "family": "Pebble Image (Normal)",
+      "description": "Tuned Pebble edition of Qwen Image 2.1 with sequential CPU offload, NF4 text encoder compression, and mask-aware inpainting + background removal.",
+      "parametersBillion": 7,
+      "quantization": "INT8_OFFLOAD",
+      "diskSizeGb": 7.9,
+      "supportedTasks": [
+        "image_generation",
+        "image_editing"
+      ],
+      "assignedProfiles": [
+        "image_generation",
+        "image_editing"
+      ],
+      "isPebbleModel": true,
+      "tier": "normal",
+      "censorship": "censored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "high",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Compatible with limitations",
+        "estimatedDiskGb": 7.9,
+        "estimatedRamGb": 8.55,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 48,
+        "systemFitScore": 63,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Runs with sequential CPU offload, tiled VAE, and INT8 / Q8_0 on 4GB VRAM; bounded batch=1 prevents OOM."
+        ],
+        "qwenLowVramProfile": {
+          "sequentialCpuOffload": true,
+          "vaeTiling": true,
+          "attentionSlicing": true,
+          "precision": "int8-offload",
+          "maxRecommendedResolution": "768x768 (1024px tiled)",
+          "maxBatchSize": 1
+        },
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "pebble-image-normal-uncensored",
+      "name": "Pebble AI Image Normal (Uncensored)",
+      "repoId": "pebble-ai/Pebble-Image-Normal-7B-Uncensored-NF4",
+      "baseModelRepo": "Qwen/Qwen-Image-2.1",
+      "family": "Pebble Image (Normal)",
+      "description": "Unfiltered Pebble Image Normal edited from Qwen Image 2.1 with bitsandbytes NF4 weight streaming and zero classifier blocks.",
+      "parametersBillion": 7,
+      "quantization": "BNB_NF4",
+      "diskSizeGb": 6.8,
+      "supportedTasks": [
+        "image_generation",
+        "image_editing"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "normal",
+      "censorship": "uncensored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "normal",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Compatible with limitations",
+        "estimatedDiskGb": 6.8,
+        "estimatedRamGb": 7.39,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 48,
+        "systemFitScore": 71,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Runs with sequential CPU offload, tiled VAE, and bitsandbytes NF4 on 4GB VRAM; bounded batch=1 prevents OOM."
+        ],
+        "qwenLowVramProfile": {
+          "sequentialCpuOffload": true,
+          "vaeTiling": true,
+          "attentionSlicing": true,
+          "precision": "bnb-nf4",
+          "maxRecommendedResolution": "768x768 (1024px tiled)",
+          "maxBatchSize": 1
+        },
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "pebble-image-ultra",
+      "name": "Pebble AI Image Ultra",
+      "repoId": "pebble-ai/Pebble-Image-Ultra-12B-NF4",
+      "baseModelRepo": "black-forest-labs/FLUX.1-dev",
+      "family": "Pebble Image (Ultra)",
+      "description": "Maximum-fidelity 12B studio diffuser edited from FLUX.1-dev using bitsandbytes NF4 + 40GB RAM layer paging and 1024px tiled VAE.",
+      "parametersBillion": 12,
+      "quantization": "BNB_NF4",
+      "diskSizeGb": 9.8,
+      "supportedTasks": [
+        "image_generation",
+        "image_editing"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "ultra",
+      "censorship": "censored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "normal",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Unsupported",
+        "estimatedDiskGb": 9.8,
+        "estimatedRamGb": 10.99,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 60,
+        "systemFitScore": 5,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Insufficient system RAM: requires ~10.99GB, host reports 12.0GB."
+        ],
+        "qwenLowVramProfile": {
+          "sequentialCpuOffload": true,
+          "vaeTiling": true,
+          "attentionSlicing": true,
+          "precision": "bnb-nf4",
+          "maxRecommendedResolution": "768x768 (1024px tiled)",
+          "maxBatchSize": 1
+        },
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "pebble-image-ultra-uncensored",
+      "name": "Pebble AI Image Ultra (Uncensored)",
+      "repoId": "pebble-ai/Pebble-Image-Ultra-12B-Uncensored-NF4",
+      "baseModelRepo": "black-forest-labs/FLUX.1-dev",
+      "family": "Pebble Image (Ultra)",
+      "description": "Unfiltered 12B FLUX-derived Pebble Ultra image studio engine with DirectML + sequential DDR5 offload and full paintbrush mask editing.",
+      "parametersBillion": 12,
+      "quantization": "BNB_NF4",
+      "diskSizeGb": 9.8,
+      "supportedTasks": [
+        "image_generation",
+        "image_editing"
+      ],
+      "assignedProfiles": [],
+      "isPebbleModel": true,
+      "tier": "ultra",
+      "censorship": "uncensored",
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "low",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Unsupported",
+        "estimatedDiskGb": 9.8,
+        "estimatedRamGb": 10.99,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 60,
+        "systemFitScore": 5,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Insufficient system RAM: requires ~10.99GB, host reports 12.0GB."
+        ],
+        "qwenLowVramProfile": {
+          "sequentialCpuOffload": true,
+          "vaeTiling": true,
+          "attentionSlicing": true,
+          "precision": "bnb-nf4",
+          "maxRecommendedResolution": "768x768 (1024px tiled)",
+          "maxBatchSize": 1
+        },
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "qwen-image-2.1",
+      "name": "Qwen Image 2.1",
+      "repoId": "Qwen/Qwen-Image-2.1",
+      "family": "Qwen Image",
+      "description": "Primary high-fidelity 7B image generation and editing architecture supporting text-to-image, localized mask editing, RGBA extraction, and crisp typography. Configured with sequential CPU offloading and tiled VAE for 4GB VRAM.",
+      "parametersBillion": 7,
+      "quantization": "BF16 + INT8 Offload",
+      "diskSizeGb": 14.8,
+      "supportedTasks": [
+        "image_generation",
+        "image_editing"
+      ],
+      "assignedProfiles": [
+        "image_generation",
+        "image_editing"
+      ],
+      "isPrimaryImageModel": true,
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "high",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Compatible with limitations",
+        "estimatedDiskGb": 14.8,
+        "estimatedRamGb": 8.55,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 48,
+        "systemFitScore": 58,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Runs with sequential CPU offload, tiled VAE, and FP16 / BF16 on 4GB VRAM; bounded batch=1 prevents OOM."
+        ],
+        "qwenLowVramProfile": {
+          "sequentialCpuOffload": true,
+          "vaeTiling": true,
+          "attentionSlicing": true,
+          "precision": "int8-offload",
+          "maxRecommendedResolution": "768x768 (1024px tiled)",
+          "maxBatchSize": 1
+        },
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "qwen2.5-coder-7b",
+      "name": "Qwen 2.5 Coder 7B (Q4_K_M)",
+      "repoId": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF",
+      "family": "Qwen Coder",
+      "description": "Dedicated programming, debugging, and code refactoring model with fast partial-layer GPU/CPU hybrid execution.",
+      "parametersBillion": 7.6,
+      "quantization": "Q4_K_M",
+      "diskSizeGb": 4.68,
+      "supportedTasks": [
+        "coding",
+        "reasoning"
+      ],
+      "assignedProfiles": [
+        "coding"
+      ],
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "normal",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 4.68,
+        "estimatedRamGb": 6.39,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 32,
+        "systemFitScore": 100,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "deepseek-r1-distill-8b",
+      "name": "DeepSeek R1 Distill Llama 8B (Q4_K_M)",
+      "repoId": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+      "family": "DeepSeek R1",
+      "description": "Step-by-step analytical reasoning and math verification model running reliably in system RAM with optional Vulkan/DirectML layer offload.",
+      "parametersBillion": 8,
+      "quantization": "Q4_K_M",
+      "diskSizeGb": 4.92,
+      "supportedTasks": [
+        "reasoning",
+        "coding",
+        "general_chat"
+      ],
+      "assignedProfiles": [
+        "reasoning"
+      ],
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "normal",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 4.92,
+        "estimatedRamGb": 6.69,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 32,
+        "systemFitScore": 85,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "qwen2.5-vl-3b",
+      "name": "Qwen 2.5 VL 3B (Q4_K_M)",
+      "repoId": "Qwen/Qwen2.5-VL-3B-Instruct",
+      "family": "Qwen VL",
+      "description": "Compact multimodal vision-language model for screenshot inspection, document OCR, and visual Q&A inside the 4GB VRAM envelope.",
+      "parametersBillion": 3.7,
+      "quantization": "Q4_K_M",
+      "diskSizeGb": 2.45,
+      "supportedTasks": [
+        "vision",
+        "general_chat"
+      ],
+      "assignedProfiles": [
+        "vision"
+      ],
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "normal",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 2.45,
+        "estimatedRamGb": 3.62,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 36,
+        "systemFitScore": 100,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "whisper-small-en",
+      "name": "Whisper Small (INT8 CPU)",
+      "repoId": "Systran/faster-whisper-small",
+      "family": "Whisper",
+      "description": "Low-latency local automatic speech recognition running in system RAM so GPU VRAM stays free for visual and LLM workloads.",
+      "parametersBillion": 0.24,
+      "quantization": "INT8",
+      "diskSizeGb": 0.48,
+      "supportedTasks": [
+        "speech_recognition"
+      ],
+      "assignedProfiles": [
+        "speech_recognition"
+      ],
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "critical",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "gpuLayersLoaded": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 0.48,
+        "estimatedRamGb": 0.93,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": false,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 12,
+        "systemFitScore": 100,
+        "reasons": [
+          "Voice weights stay in system RAM on Ryzen CPU so GPU VRAM remains dedicated to chat or visual tasks.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "kokoro-82m-tts",
+      "name": "Kokoro 82M / Piper Local TTS",
+      "repoId": "hexgrad/Kokoro-82M",
+      "family": "Kokoro TTS",
+      "description": "Natural lightweight local neural speech synthesizer running entirely on Ryzen CPU threads at real-time speed.",
+      "parametersBillion": 0.08,
+      "quantization": "FP16",
+      "diskSizeGb": 0.32,
+      "supportedTasks": [
+        "speech_generation"
+      ],
+      "assignedProfiles": [
+        "speech_generation"
+      ],
+      "noDownloadRequired": true,
+      "installed": true,
+      "priority": "critical",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "loaded_cpu",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0.77,
+      "gpuLayersLoaded": 0,
+      "loadCount": 4,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 0.32,
+        "estimatedRamGb": 0.77,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": false,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 12,
+        "systemFitScore": 96,
+        "reasons": [
+          "Voice weights stay in system RAM on Ryzen CPU so GPU VRAM remains dedicated to chat or visual tasks.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "isSystemBestMatch": false
+      },
+      "lastUsedAt": 1795047561070
+    },
+    {
+      "id": "qwen2.5-7b-instruct",
+      "name": "Qwen 2.5 7B Instruct (Q4_K_M)",
+      "repoId": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+      "family": "Qwen 2.5",
+      "description": "Balanced general conversation, document summarization, and structured tool-calling model tuned for 4GB VRAM + 40GB system RAM.",
+      "parametersBillion": 7.6,
+      "quantization": "Q4_K_M",
+      "diskSizeGb": 4.68,
+      "supportedTasks": [
+        "general_chat",
+        "reasoning",
+        "omni_routing"
+      ],
+      "assignedProfiles": [
+        "general_chat",
+        "omni_routing"
+      ],
+      "installed": true,
+      "priority": "high",
+      "downloadState": "completed",
+      "downloadProgress": 100,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 4.68,
+        "estimatedRamGb": 6.39,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 32,
+        "systemFitScore": 100,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "sdxs-512-fast",
+      "name": "SDXS-512 Fast Draft (Optional)",
+      "repoId": "IDKiro/sdxs-512-0.9",
+      "family": "Draft Diffusion",
+      "description": "Ultra-compact draft image generator for quick layout previews when you want sub-10s drafts alongside primary Qwen Image 2.1.",
+      "parametersBillion": 0.9,
+      "quantization": "FP16",
+      "diskSizeGb": 2.1,
+      "supportedTasks": [
+        "image_generation"
+      ],
+      "assignedProfiles": [],
+      "installed": false,
+      "priority": "low",
+      "downloadState": "idle",
+      "downloadProgress": 0,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 2.1,
+        "estimatedRamGb": 3.25,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 24,
+        "systemFitScore": 96,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "qwenLowVramProfile": {
+          "sequentialCpuOffload": true,
+          "vaeTiling": true,
+          "attentionSlicing": true,
+          "precision": "int8-offload",
+          "maxRecommendedResolution": "768x768 (1024px tiled)",
+          "maxBatchSize": 1
+        },
+        "isSystemBestMatch": false
+      }
+    },
+    {
+      "id": "realesrgan-x4",
+      "name": "Real-ESRGAN x4+ Upscaler",
+      "repoId": "ai-forever/Real-ESRGAN",
+      "family": "Upscaler",
+      "description": "Tiled 4x detail upscaler for enlarging Qwen Image 2.1 outputs on 4GB VRAM without memory spikes.",
+      "parametersBillion": 0.06,
+      "quantization": "FP16",
+      "diskSizeGb": 0.12,
+      "supportedTasks": [
+        "image_editing"
+      ],
+      "assignedProfiles": [],
+      "installed": false,
+      "priority": "low",
+      "downloadState": "idle",
+      "downloadProgress": 0,
+      "status": "unloaded",
+      "vramAllocatedGb": 0,
+      "ramAllocatedGb": 0,
+      "loadCount": 0,
+      "compatibility": {
+        "tier": "Recommended",
+        "estimatedDiskGb": 0.12,
+        "estimatedRamGb": 1.27,
+        "estimatedVramGb": 0,
+        "recommendedBackend": "CPU (AVX2 / System RAM)",
+        "supportsCpuFallback": true,
+        "requiresCpuOffload": true,
+        "gpuLayersOffloaded": 0,
+        "totalLayers": 24,
+        "systemFitScore": 96,
+        "reasons": [
+          "No dedicated GPU detected on current host; CPU AVX2 system RAM or Server Gateway active.",
+          "Optimal memory envelope for the host system with minimal swap overhead."
+        ],
+        "qwenLowVramProfile": {
+          "sequentialCpuOffload": true,
+          "vaeTiling": true,
+          "attentionSlicing": true,
+          "precision": "int8-offload",
+          "maxRecommendedResolution": "768x768 (1024px tiled)",
+          "maxBatchSize": 1
+        },
+        "isSystemBestMatch": false
+      }
+    }
+  ],
+  "queue": [],
+  "memoryHistory": [
+    {
+      "timestamp": 1795044668479,
+      "ramUsedGb": 0.73,
+      "vramUsedGb": 0,
+      "loadedModelCount": 0,
+      "activeModelName": null
+    },
+    {
+      "timestamp": 1795047481435,
+      "ramUsedGb": 7.64,
+      "vramUsedGb": 0,
+      "loadedModelCount": 1,
+      "activeModelName": "Pebble AI Chat Normal"
+    },
+    {
+      "timestamp": 1795047481437,
+      "ramUsedGb": 8.41,
+      "vramUsedGb": 0,
+      "loadedModelCount": 2,
+      "activeModelName": "Pebble AI Chat Normal"
+    },
+    {
+      "timestamp": 1795047502714,
+      "ramUsedGb": 7.9,
+      "vramUsedGb": 0,
+      "loadedModelCount": 2,
+      "activeModelName": "Pebble AI Chat Normal"
+    },
+    {
+      "timestamp": 1795047502715,
+      "ramUsedGb": 7.9,
+      "vramUsedGb": 0,
+      "loadedModelCount": 2,
+      "activeModelName": "Pebble AI Chat Normal"
+    },
+    {
+      "timestamp": 1795047557107,
+      "ramUsedGb": 8.39,
+      "vramUsedGb": 0,
+      "loadedModelCount": 2,
+      "activeModelName": "Pebble AI Chat Normal"
+    },
+    {
+      "timestamp": 1795047557108,
+      "ramUsedGb": 8.39,
+      "vramUsedGb": 0,
+      "loadedModelCount": 2,
+      "activeModelName": "Pebble AI Chat Normal"
+    },
+    {
+      "timestamp": 1795047561069,
+      "ramUsedGb": 8.34,
+      "vramUsedGb": 0,
+      "loadedModelCount": 2,
+      "activeModelName": "Pebble AI Chat Normal"
+    },
+    {
+      "timestamp": 1795047561070,
+      "ramUsedGb": 8.34,
+      "vramUsedGb": 0,
+      "loadedModelCount": 2,
+      "activeModelName": "Pebble AI Chat Normal"
+    },
+    {
+      "timestamp": 1795048268383,
+      "ramUsedGb": 1.56,
+      "vramUsedGb": 0,
+      "loadedModelCount": 1,
+      "activeModelName": "Kokoro 82M / Piper Local TTS"
+    },
+    {
+      "timestamp": 1795049118283,
+      "ramUsedGb": 8.39,
+      "vramUsedGb": 0,
+      "loadedModelCount": 2,
+      "activeModelName": "Pebble AI Chat Normal"
+    }
+  ],
+  "routingHistory": [
+    {
+      "id": "route-1795047563549",
+      "timestamp": 1795047563549,
+      "userPromptSnippet": "Show me the latest gallery image",
+      "routerId": "omni",
+      "detectedTask": "general_chat",
+      "mode": "automatic",
+      "selectedModelId": "pebble-chat-normal",
+      "selectedModelName": "Pebble AI Chat Normal",
+      "backendUsed": "Cloud Gateway (@google/genai)",
+      "unloadedModels": [],
+      "reasoning": "Voice mode via Pebble Omni -> Pebble AI Chat Normal (Cloud TTS Gateway (gemini-3.8-flash-lite-tts)).",
+      "latencyMs": 2496,
+      "status": "completed",
+      "source": "desktop"
+    },
+    {
+      "id": "route-1795047560755",
+      "timestamp": 1795047560755,
+      "userPromptSnippet": "Check VRAM and loaded models status",
+      "routerId": "omni",
+      "detectedTask": "general_chat",
+      "mode": "automatic",
+      "selectedModelId": "pebble-chat-normal",
+      "selectedModelName": "Pebble AI Chat Normal",
+      "backendUsed": "Cloud Gateway (@google/genai)",
+      "unloadedModels": [],
+      "reasoning": "Voice mode via Pebble Omni -> Pebble AI Chat Normal (Cloud TTS Gateway (gemini-3.8-flash-lite-tts)).",
+      "latencyMs": 3665,
+      "status": "completed",
+      "source": "desktop"
+    },
+    {
+      "id": "route-1795047506612",
+      "timestamp": 1795047506612,
+      "userPromptSnippet": "Check VRAM and loaded models status",
+      "routerId": "omni",
+      "detectedTask": "general_chat",
+      "mode": "automatic",
+      "selectedModelId": "pebble-chat-normal",
+      "selectedModelName": "Pebble AI Chat Normal",
+      "backendUsed": "Cloud Gateway (@google/genai)",
+      "unloadedModels": [],
+      "reasoning": "Voice mode via Pebble Omni -> Pebble AI Chat Normal (Cloud TTS Gateway (gemini-3.8-flash-lite-tts)).",
+      "latencyMs": 3904,
+      "status": "completed",
+      "source": "desktop"
+    },
+    {
+      "id": "route-1795047484696",
+      "timestamp": 1795047484696,
+      "userPromptSnippet": "Check VRAM and loaded models status",
+      "routerId": "omni",
+      "detectedTask": "general_chat",
+      "mode": "automatic",
+      "selectedModelId": "pebble-chat-normal",
+      "selectedModelName": "Pebble AI Chat Normal",
+      "backendUsed": "Cloud Gateway (@google/genai)",
+      "unloadedModels": [],
+      "reasoning": "Voice mode via Pebble Omni -> Pebble AI Chat Normal (Cloud TTS Gateway (gemini-3.8-flash-lite-tts)).",
+      "latencyMs": 3281,
+      "status": "completed",
+      "source": "desktop"
+    }
+  ],
+  "conversations": [
+    {
+      "id": "conv-welcome",
+      "title": "Getting Started with Pebble AI",
+      "createdAt": 1795044608479,
+      "updatedAt": 1795044608479,
+      "systemInstruction": "You are Pebble AI, a helpful local-first AI assistant running inside the Pebble AI ecosystem. Be concise, accurate, and clear.",
+      "selectedModelId": "qwen2.5-7b-instruct",
+      "useOmniRouting": true,
+      "temperature": 0.7,
+      "maxTokens": 2048,
+      "messages": [
+        {
+          "id": "msg-welcome-1",
+          "role": "assistant",
+          "content": "Welcome to **Pebble AI**. Omni Router is active in **Automatic** mode and Smart Resource Mode is protecting memory headroom.\n\nYou can:\n- Ask coding, architecture, or document questions here in **Chat**.\n- Request images directly (e.g. *\"Make a realistic picture of an alpine cabin\"*) and Omni will route to **Pebble Image Tiny**.\n- Open **Image Lab** for mask-based editing, **Voice** for live spoken conversations, **Agent** for file tasks, or **Remote** to connect another device on your Wi-Fi.",
+          "createdAt": 1795044608479,
+          "modelId": "qwen2.5-7b-instruct",
+          "modelName": "Qwen 2.5 7B Instruct (Q4_K_M)",
+          "backendUsed": "Omni Ready",
+          "routingTask": "general_chat"
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-1795049098881",
+      "prompt": "One-Click Background Removal Cutout (Pebble AI Image Normal)",
+      "negativePrompt": "",
+      "modelId": "pebble-image-small",
+      "modelName": "Local Canvas Alpha Cutout",
+      "backendUsed": "Browser RGBA Matting Engine",
+      "mode": "remove_background",
+      "aspectRatio": "1:1",
+      "width": 768,
+      "height": 768,
+      "steps": 1,
+      "seed": 0,
+      "lowVramProfile": true,
+      "imageUrl": "/api/images/file/pebble_cutout_1795049098878_2xaw.png",
+      "favorite": false,
+      "createdAt": 1795049098881,
+      "source": "desktop"
+    },
+    {
+      "id": "img-1795047479028",
+      "prompt": "Transparent background cutout (Pebble AI Image Normal)",
+      "negativePrompt": "",
+      "modelId": "pebble-image-small",
+      "modelName": "Local Canvas Alpha Cutout",
+      "backendUsed": "Browser RGBA Matting Engine",
+      "mode": "remove_background",
+      "aspectRatio": "1:1",
+      "width": 768,
+      "height": 768,
+      "steps": 1,
+      "seed": 0,
+      "lowVramProfile": true,
+      "imageUrl": "/api/images/file/pebble_cutout_1795047479024_d5p1.png",
+      "favorite": false,
+      "createdAt": 1795047479028,
+      "source": "desktop"
+    },
+    {
+      "id": "img-seed-1",
+      "prompt": "Architectural documentary photograph of a quiet modern industrial design studio with dark charcoal steel shelving, warm timber workbench, potted ferns, and soft north-facing window light, Leica 35mm film aesthetic.",
+      "negativePrompt": "oversaturated, blurry, watermark, distorted geometry",
+      "modelId": "qwen-image-2.1",
+      "modelName": "Qwen Image 2.1",
+      "backendUsed": "Seeded Showcase Asset",
+      "mode": "generate",
+      "aspectRatio": "4:3",
+      "width": 1024,
+      "height": 768,
+      "steps": 28,
+      "seed": 418204,
+      "lowVramProfile": true,
+      "imageUrl": "/src/assets/images/sample_atelier_interior_1795043476347.jpg",
+      "favorite": true,
+      "createdAt": 1795041128479,
+      "source": "desktop"
+    },
+    {
+      "id": "img-seed-2",
+      "prompt": "Cinematic architectural photograph of a cantilevered dark anodized steel and cedar research cabin perched on a misty evergreen mountain ridge at twilight, soft interior amber lamp glow.",
+      "negativePrompt": "cartoon, neon glow, low resolution",
+      "modelId": "qwen-image-2.1",
+      "modelName": "Qwen Image 2.1",
+      "backendUsed": "Seeded Showcase Asset",
+      "mode": "generate",
+      "aspectRatio": "16:9",
+      "width": 1024,
+      "height": 576,
+      "steps": 32,
+      "seed": 902114,
+      "lowVramProfile": true,
+      "imageUrl": "/src/assets/images/sample_alpine_observatory_1795043477194.jpg",
+      "favorite": false,
+      "createdAt": 1795042328479,
+      "source": "desktop"
+    },
+    {
+      "id": "img-seed-3",
+      "prompt": "Minimalist studio product photography of a faceted smoked glass botanical terrarium holding deep emerald moss and river pebbles resting on matte dark basalt stone, soft diffused side lighting.",
+      "negativePrompt": "plastic texture, harsh flash, cluttered background",
+      "modelId": "qwen-image-2.1",
+      "modelName": "Qwen Image 2.1",
+      "backendUsed": "Seeded Showcase Asset",
+      "mode": "generate",
+      "aspectRatio": "1:1",
+      "width": 768,
+      "height": 768,
+      "steps": 24,
+      "seed": 774312,
+      "lowVramProfile": true,
+      "imageUrl": "/src/assets/images/sample_botanical_terrarium_1795043476520.jpg",
+      "favorite": true,
+      "createdAt": 1795043528479,
+      "source": "desktop"
+    }
+  ],
+  "voiceHistory": [
+    {
+      "id": "v-1795047484696-u",
+      "role": "user",
+      "text": "Check VRAM and loaded models status",
+      "language": "en-US",
+      "timestamp": 1795047484696
+    },
+    {
+      "id": "v-1795047484696-a",
+      "role": "assistant",
+      "text": "Running on x64 Host Processor (4 threads) with 1.25 of 12 gigabytes RAM in use. Pebble Omni is active, and currently loaded models are: Pebble AI Chat Normal (0/32 GPU layers).",
+      "language": "en-US",
+      "timestamp": 1795047484696,
+      "modelName": "Pebble AI Chat Normal",
+      "actionLabel": "Live System Diagnostic"
+    },
+    {
+      "id": "v-1795047506612-u",
+      "role": "user",
+      "text": "Check VRAM and loaded models status",
+      "language": "en-US",
+      "timestamp": 1795047506612
+    },
+    {
+      "id": "v-1795047506612-a",
+      "role": "assistant",
+      "text": "Running on x64 Host Processor (4 threads) with 0.74 of 12 gigabytes RAM in use. Pebble Omni is active, and currently loaded models are: Pebble AI Chat Normal (0/32 GPU layers), Kokoro 82M / Piper Local TTS (0/12 GPU layers).",
+      "language": "en-US",
+      "timestamp": 1795047506612,
+      "modelName": "Pebble AI Chat Normal",
+      "actionLabel": "Live System Diagnostic"
+    },
+    {
+      "id": "v-1795047560755-u",
+      "role": "user",
+      "text": "Check VRAM and loaded models status",
+      "language": "en-US",
+      "timestamp": 1795047560755
+    },
+    {
+      "id": "v-1795047560755-a",
+      "role": "assistant",
+      "text": "Running on x64 Host Processor (4 threads) with 1.23 of 12 gigabytes RAM in use. Pebble Omni is active, and currently loaded models are: Pebble AI Chat Normal (0/32 GPU layers), Kokoro 82M / Piper Local TTS (0/12 GPU layers).",
+      "language": "en-US",
+      "timestamp": 1795047560755,
+      "modelName": "Pebble AI Chat Normal",
+      "actionLabel": "Live System Diagnostic"
+    },
+    {
+      "id": "v-1795047563549-u",
+      "role": "user",
+      "text": "Show me the latest gallery image",
+      "language": "en-US",
+      "timestamp": 1795047563549
+    },
+    {
+      "id": "v-1795047563549-a",
+      "role": "assistant",
+      "text": "Here is your latest visual from Image Studio generated with Local Canvas Alpha Cutout.",
+      "language": "en-US",
+      "timestamp": 1795047563549,
+      "modelName": "Pebble AI Chat Normal",
+      "generatedImageUrl": "/api/images/file/pebble_cutout_1795047479024_d5p1.png",
+      "generatedImagePrompt": "Transparent background cutout (Pebble AI Image Normal)",
+      "actionLabel": "Gallery Visual Displayed"
+    }
+  ],
+  "agentTasks": [
+    {
+      "id": "agent-1795049118287",
+      "goal": "Move mouse to 640, 360 and click",
+      "status": "completed",
+      "createdAt": 1795049118287,
+      "updatedAt": 1795049122432,
+      "workingDirectory": "/app/applet/data/agent_workspace",
+      "selectedModelId": "pebble-chat-normal",
+      "selectedModelName": "Pebble AI Chat Normal",
+      "modelCensorship": "censored",
+      "steps": [
+        {
+          "id": "step-1795049118287-pc",
+          "index": 1,
+          "title": "Move mouse cursor to (640, 360)",
+          "tool": "mouse_move",
+          "args": {
+            "x": "640",
+            "y": "360"
+          },
+          "requiresApproval": true,
+          "approvalStatus": "approved",
+          "status": "completed",
+          "preview": "Censored Model Host Input Action -> Move mouse cursor to (640, 360)",
+          "output": "Authorized for censored model (Pebble AI Chat Normal): Move mouse cursor to (640, 360). Start pc_control_worker.py on your Windows 11 host for physical cursor/keyboard actuation."
+        }
+      ],
+      "logs": [
+        {
+          "timestamp": 1795049118287,
+          "level": "info",
+          "message": "Pebble Omni planned 1 steps using Pebble AI Chat Normal (Censored — PC & Workspace Authorized)."
+        },
+        {
+          "timestamp": 1795049122425,
+          "level": "info",
+          "message": "Executing step 1: Move mouse cursor to (640, 360) [mouse_move]"
+        },
+        {
+          "timestamp": 1795049122431,
+          "level": "info",
+          "message": "Step 1 completed."
+        }
+      ],
+      "summary": "Completed 1 of 1 steps (PC + Workspace Mode)."
+    }
+  ],
+  "remoteDevices": []
+}

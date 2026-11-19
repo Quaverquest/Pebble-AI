@@ -1,0 +1,6 @@
+{
+  "name": "Pebble AI",
+  "description": "Unified local-first AI ecosystem featuring Pebble Omni intelligent model routing, Chat with built-in Voice, Image Lab, Autonomous Agent, Model Lifecycle Manager, and Household Wi-Fi Remote Access.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

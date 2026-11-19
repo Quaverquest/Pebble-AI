@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+    --pebble-backdrop: radial-gradient(circle at 18% 22%, rgba(92, 164, 146, 0.42) 0%, rgba(28, 63, 62, 0.85) 45%, #0c1718 100%);
+    --pebble-panel-bg: rgba(14, 24, 26, 0.62);
+    --pebble-panel-hover: rgba(22, 36, 38, 0.74);
+    --pebble-panel-border: rgba(255, 255, 255, 0.14);
+    --pebble-text-primary: #f3f7f6;
+    --pebble-text-secondary: #b2c7c3;
+    --pebble-accent: #2f8f79;
+    --pebble-accent-hover: #38a88e;
+    --pebble-accent-text: #ffffff;
+    --pebble-blur: 24px;
+  }
+
+  html {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Windows 11 Acrylic / Mica Frosted Glass Surfaces */
+.pebble-glass {
+  background-color: var(--pebble-panel-bg);
+  border: 1px solid var(--pebble-panel-border);
+  backdrop-filter: blur(var(--pebble-blur)) saturate(135%);
+  -webkit-backdrop-filter: blur(var(--pebble-blur)) saturate(135%);
+}
+
+.pebble-glass-subtle {
+  background-color: var(--pebble-panel-bg);
+  border-color: var(--pebble-panel-border);
+  backdrop-filter: blur(calc(var(--pebble-blur) * 0.8)) saturate(125%);
+  -webkit-backdrop-filter: blur(calc(var(--pebble-blur) * 0.8)) saturate(125%);
+}
+
+.pebble-accent-btn {
+  background-color: var(--pebble-accent);
+  color: var(--pebble-accent-text);
+  transition: background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pebble-accent-btn:hover:not(:disabled) {
+  background-color: var(--pebble-accent-hover);
+}
+
+@keyframes pebbleAuroraShift {
+  0% {
+    transform: translate3d(-4%, -2%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, 3%, 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(-4%, -2%, 0) scale(1);
+  }
+}
+
+@keyframes pebbleMeshFloat {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(-3%, 4%, 0) rotate(6deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+.animate-pebble-aurora {
+  animation: pebbleAuroraShift 18s ease-in-out infinite;
+}
+
+.animate-pebble-mesh {
+  animation: pebbleMeshFloat 22s ease-in-out infinite;
+}
+
+/* Custom minimal scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 128, 124, 0.32);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(47, 143, 121, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
